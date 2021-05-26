@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+.app {
+    width: 100%;
+}
+
+.header {
+    position: sticky;
+    z-index: 1110;
+    top: 0;
+}
+input:focus {
+    outline: none;
+}
+ul {
+    list-style-type: none;
+}
+a {
+    text-decoration: none;
+}

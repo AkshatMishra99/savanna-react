@@ -1,0 +1,22 @@
+.subtotal {
+    color: rgb(222, 219, 215);
+    background-color: #202324;
+    display: flex;
+    flex-direction: column;
+    justify-self: space-between;
+    height: 150px;
+    padding: 20px;
+    border-radius: 3px;
+    border: 1px solid#736b5e;
+}
+.subtotal__gift {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+.proceedToOrder {
+    width: 100%;
+}
+.subtotal__gift input {
+    margin-right: 5px;
+}

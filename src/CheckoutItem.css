@@ -1,0 +1,4 @@
+.checkoutItem {
+    display: flex;
+    flex-direction: column;
+}

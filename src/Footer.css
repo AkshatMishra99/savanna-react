@@ -1,0 +1,192 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+.footer {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(41, 50, 58);
+}
+.footer-inner {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(41, 50, 58);
+}
+.take-to-top {
+    width: 100%;
+    display: flex;
+    flex: 1;
+    cursor: pointer;
+    justify-content: center;
+    background-color: rgb(44, 57, 72);
+    height: 100%;
+    color: rgb(232, 230, 227);
+    padding: 20px 0;
+}
+.take-to-top:hover {
+    background-color: rgba(64, 67, 82, 0.9);
+}
+.footer-top {
+    display: flex;
+    justify-content: space-between;
+}
+.company-logo-img {
+    max-width: 100%;
+    width: 150px;
+    object-fit: cover;
+    padding: 10px;
+    margin: auto;
+    align-items: center;
+    cursor: pointer;
+}
+.socialBar {
+    display: flex;
+    flex-direction: row;
+    margin: 15px;
+    justify-content: space-evenly;
+    flex: 1;
+    color: rgb(232, 230, 227);
+}
+.socialBar li {
+    cursor: pointer;
+}
+.socialBar li svg path {
+    object-fit: cover;
+    height: 60px;
+}
+.footer-promo {
+    display: flex;
+    justify-content: center;
+    color: rgb(232, 230, 227);
+    text-transform: uppercase;
+    font-family: "Roboto Mono", Arial, Helvetica, sans-serif;
+    margin-top: 10px;
+}
+.promo-text {
+    font-family: "Roboto Mono", Arial, Helvetica, sans-serif;
+    width: 90px;
+    text-align: center;
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: 700;
+}
+.quick-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 10px;
+}
+.about-us {
+    padding-bottom: 10px;
+}
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-bottom: 30px;
+}
+.contact-us-submit {
+    float: right;
+}
+.footer-lower {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    color: rgb(232, 230, 227);
+    background-color: rgb(24, 26, 27);
+    padding: 40px 0;
+}
+.user-options ul li {
+    display: flex;
+    justify-content: center;
+    font-weight: 700;
+    font-family: "Roboto Mono";
+    padding: 15px 0;
+}
+
+@media (min-width: 768px) {
+    .footer-inner {
+        padding: 40px 20px 20px;
+    }
+    .footer-top {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .footer-middle {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+        color: rgb(232, 230, 227);
+        padding: 20px;
+    }
+    .about-us {
+        width: 30%;
+    }
+    .add-info ul li {
+        margin-right: 30px;
+    }
+}
+.links {
+    display: flex;
+    flex-direction: row;
+    justify-self: space-evenly;
+}
+.links ul li {
+    cursor: pointer;
+}
+.some-links {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    justify-content: space-evenly;
+    padding-top: 30px;
+    padding-left: 15px;
+}
+.add-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.add-info ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+@media (max-width: 767px) {
+    .footer-inner {
+        padding: 40px 15px;
+    }
+    .footer-top {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .company-logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 1;
+    }
+    .footer-middle {
+        display: block;
+        justify-content: space-around;
+        color: rgb(232, 230, 227);
+    }
+    .about-us {
+        display: none;
+    }
+    .quick-links {
+        padding: 20px 0;
+    }
+    .quick-links h2 {
+        font-size: 24px;
+        font-weight: 800;
+    }
+    .add-info ul li {
+        /* flex: 1; */
+        font-size: 10px;
+        font-weight: normal;
+        letter-spacing: 0px;
+        margin-right: 10px;
+    }
+}
