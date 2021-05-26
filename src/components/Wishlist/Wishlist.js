@@ -1,8 +1,8 @@
 import React from "react";
-import "./CheckoutItem.css";
+import "../Checkout/CheckoutProduct.css";
 import "./Wishlist.css";
 import WishlistProduct from "./WishlistProduct";
-import { useStateValue } from "./StateProvider";
+import { useStateValue } from "../../context/StateProvider";
 function Wishlist() {
     const [{ wishlist }, dispatch] = useStateValue();
     let listItems = [];

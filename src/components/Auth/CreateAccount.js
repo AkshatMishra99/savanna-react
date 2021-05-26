@@ -12,9 +12,10 @@ import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
+import Backdrop from "../UI/Backdrop";
 import { Link, useHistory } from "react-router-dom";
 import { useState } from "react";
-import { auth } from "./firebase";
+import { auth } from "../../firebase";
 function Copyright() {
     return (
         <Typography variant="body2" color="textSecondary" align="center">
@@ -49,19 +50,33 @@ export default function SignUp() {
     const classes = useStyles();
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
+    const [isLoading, setIsLoading] = useState(false);
+    const [feedback, setFeedback] = useState(null);
+    const [error, setError] = useState(false);
     const signUp = (e) => {
         e.preventDefault();
+        setIsLoading(true);
+        setFeedback(null);
+        setError(false);
         auth.createUserWithEmailAndPassword(email, password)
             .then((auth) => {
                 console.log(auth);
+                setIsLoading(false);
+                setFeedback("Signed up successfully!!");
                 if (auth) {
                     history.push("/");
                 }
             })
-            .catch((err) => console.log(err.message));
+            .catch((err) => {
+                setError(true);
+                setFeedback(err.message);
+                console.log(err.message);
+                setIsLoading(false);
+            });
     };
     return (
         <Container component="main" maxWidth="xs">
+            {isLoading && <Backdrop open={isLoading} />}
             <CssBaseline />
             <div className={classes.paper}>
                 <Avatar className={classes.avatar}>
@@ -140,6 +155,16 @@ export default function SignUp() {
                             />
                         </Grid>
                     </Grid>
+                    {error && (
+                        <div className="alert alert-danger" role="alert">
+                            {feedback}
+                        </div>
+                    )}
+                    {!error && feedback && (
+                        <div className="alert alert-success" role="alert">
+                            {feedback}
+                        </div>
+                    )}
                     <Button
                         type="submit"
                         fullWidth

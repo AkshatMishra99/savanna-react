@@ -1,7 +1,7 @@
 import React from "react";
 import "./CheckoutItem.css";
 import CheckoutProduct from "./CheckoutProduct";
-import { useStateValue } from "./StateProvider";
+import { useStateValue } from "../../context/StateProvider";
 function CheckoutItem() {
     const [{ basket }, dispatch] = useStateValue();
     let listItems = [];

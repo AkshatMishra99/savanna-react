@@ -1,21 +1,20 @@
 import React from "react";
 import "./App.css";
-import Header from "./Header";
-import SignInSide from "./SignInSide";
-import Home from "./Home";
+import Header from "./components/Layout/Header";
+import SignInSide from "./components/Auth/SignInSide";
+import Home from "./components/Layout/Home";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Checkout from "./Checkout";
-import CreateAccount from "./CreateAccount";
-import AddressForm from "./AddressForm";
-import PlaceOrder from "./PlaceOrder";
+import Checkout from "./components/Checkout/Checkout";
+import CreateAccount from "./components/Auth/CreateAccount";
+import PlaceOrder from "./components/Orders/PlaceOrder";
 import { auth } from "./firebase";
 import { useEffect } from "react";
-import { useStateValue } from "./StateProvider";
-import Footer from "./Footer";
-import ProductDesc from "./ProductDesc";
-import Wishlist from "./Wishlist";
+import { useStateValue } from "./context/StateProvider";
+import Footer from "./components/Layout/Footer";
+import ProductDesc from "./components/Products/ProductDesc";
+import Wishlist from "./components/Wishlist/Wishlist";
 function App() {
-    const [{}, dispatch] = useStateValue();
+    const [dispatch] = useStateValue();
     useEffect(() => {
         auth.onAuthStateChanged((authUser) => {
             console.log(authUser);
@@ -26,7 +25,7 @@ function App() {
                 dispatch({ type: "SET_USER", user: null });
             }
         });
-    }, []);
+    }, [dispatch]);
     return (
         <Router>
             <div className="app">

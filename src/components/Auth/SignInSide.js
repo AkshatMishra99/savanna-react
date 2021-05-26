@@ -14,7 +14,8 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import { Link, useHistory } from "react-router-dom";
 import { useState } from "react";
-import { auth } from "./firebase";
+import { auth } from "../../firebase";
+import Backdrop from "../UI/Backdrop";
 function Copyright() {
     return (
         <Typography variant="body2" color="textSecondary" align="center">
@@ -66,16 +67,30 @@ export default function SignInSide() {
     const classes = useStyles();
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
+    const [error, setError] = useState();
+    const [feedback, setFeedback] = useState(null);
+    const [isLoading, setIsLoading] = useState(false);
     const signIn = (e) => {
         e.preventDefault();
+        setError(false);
+        setFeedback(null);
+        setIsLoading(true);
         auth.signInWithEmailAndPassword(email, password)
-            .then((auth) => {
+            .then((res) => {
+                setIsLoading(false);
+                setFeedback("Signed in successfully!!");
                 history.push("/");
             })
-            .catch((err) => console.log(err));
+            .catch((err) => {
+                setIsLoading(false);
+                setError(true);
+                setFeedback(err.message);
+                console.log(err);
+            });
     };
     return (
         <Grid container component="main" className={classes.root}>
+            {isLoading && <Backdrop open={isLoading} />}
             <CssBaseline />
             <Grid item xs={false} sm={4} md={7} className={classes.image} />
             <Grid
@@ -131,6 +146,16 @@ export default function SignInSide() {
                             }
                             label="Remember me"
                         />
+                        {error && (
+                            <div className="alert alert-danger" role="alert">
+                                {feedback}
+                            </div>
+                        )}
+                        {!error && feedback && (
+                            <div className="alert alert-success" role="alert">
+                                {feedback}
+                            </div>
+                        )}
                         <Button
                             type="submit"
                             fullWidth

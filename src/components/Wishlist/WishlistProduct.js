@@ -1,6 +1,6 @@
 import React from "react";
-import "./CheckoutProduct.css";
-import { useStateValue } from "./StateProvider";
+import "../Checkout/CheckoutProduct.css";
+import { useStateValue } from "../../context/StateProvider";
 import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 function WishlistProduct({ item }) {

@@ -4,13 +4,13 @@ import SearchIcon from "@material-ui/icons/Search";
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingCart";
 import Menu from "./MenuBar.js";
 import { Link } from "react-router-dom";
-import { useStateValue } from "./StateProvider";
-import { calculateItems } from "./reducer";
-import { auth } from "./firebase";
+import { useStateValue } from "../../context/StateProvider";
+import { calculateItems } from "../../context/reducer";
+import { auth } from "../../firebase";
 import { FormControl, InputGroup } from "react-bootstrap";
 import BookmarkIcon from "@material-ui/icons/Bookmark";
 function Header() {
-    const [{ basket }, dispatch] = useStateValue();
+    const [{ basket }] = useStateValue();
     const [{ user }] = useStateValue();
     const handleAuthentication = () => {
         if (user) {
@@ -25,6 +25,7 @@ function Header() {
                         <img
                             className="header__logo"
                             src="https://pngimg.com/uploads/amazon/amazon_PNG11.png"
+                            alt="header"
                         />
                     </Link>
                     <div className="header__nav">

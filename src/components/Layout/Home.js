@@ -3,14 +3,14 @@ import "./Home.css";
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Carousel } from "react-bootstrap";
-import Product from "./Product";
-import { useStateValue } from "./StateProvider";
+import Product from "../Products/Product";
+import { useStateValue } from "../../context/StateProvider";
 /* import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { faHeart } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"; */
 import { Link } from "react-router-dom";
 function Home() {
-    const [{ basket, user, inventory }, dispatch] = useStateValue();
+    const [{ inventory }] = useStateValue();
     let prod_list_container = [];
     for (let i in inventory.category) {
         let prod_cat = [];

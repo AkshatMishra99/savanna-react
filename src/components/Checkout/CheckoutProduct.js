@@ -1,6 +1,6 @@
 import React from "react";
 import "./CheckoutProduct.css";
-import { useStateValue } from "./StateProvider";
+import { useStateValue } from "../../context/StateProvider";
 
 function CheckoutProduct({ item }) {
     let count = 1;

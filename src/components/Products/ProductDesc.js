@@ -3,7 +3,7 @@ import "./ProductDesc.css";
 import { Link, useLocation } from "react-router-dom";
 import { Button, Carousel } from "react-bootstrap";
 import { useState } from "react";
-import { useStateValue } from "./StateProvider";
+import { useStateValue } from "../../context/StateProvider";
 function ProductDesc() {
     let [index, setIndex] = useState();
     const [state, dispatch] = useStateValue();

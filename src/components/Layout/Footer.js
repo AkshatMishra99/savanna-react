@@ -10,8 +10,8 @@ import { Button } from "react-bootstrap";
 import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Box, Link, Typography } from "@material-ui/core";
-import { useStateValue } from "./StateProvider";
-import { auth } from "./firebase";
+import { useStateValue } from "../../context/StateProvider";
+import { auth } from "../../firebase";
 function Copyright() {
     return (
         <Typography
