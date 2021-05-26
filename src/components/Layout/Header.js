@@ -80,10 +80,10 @@ function Header() {
                             // className="header__searchInput"
                             style={{
                                 width: "280px",
-                                "justify-content": "center",
-                                "z-index": "0",
+                                justifyContent: "center",
+                                zIndex: "0",
                                 height: "42px",
-                                "margin-top": "16px",
+                                marginTop: "16px",
                             }}
                         />
                     </InputGroup>

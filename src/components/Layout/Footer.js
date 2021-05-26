@@ -39,7 +39,7 @@ function Footer() {
     };
     return (
         <div className="footer">
-            <a href="#nav-top" style={{ "text-decoration": "none" }}>
+            <a href="#nav-top" style={{ textDecoration: "none" }}>
                 <div className="take-to-top">
                     <span>Back to top</span>
                 </div>
@@ -139,7 +139,7 @@ function Footer() {
                             >
                                 <FontAwesomeIcon
                                     icon={faPaperPlane}
-                                    style={{ "margin-right": "5px" }}
+                                    style={{ marginRight: "5px" }}
                                 />
                                 Send
                             </Button>
@@ -158,7 +158,7 @@ function Footer() {
                                     onClick={handleAuthentication}
                                     style={{
                                         color: "rgb(232, 230, 227)",
-                                        "font-family": "Roboto Mono",
+                                        fontFamily: "Roboto Mono",
                                     }}
                                 >
                                     {user ? "Sign Out" : "Sign In"}

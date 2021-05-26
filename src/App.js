@@ -14,7 +14,7 @@ import Footer from "./components/Layout/Footer";
 import ProductDesc from "./components/Products/ProductDesc";
 import Wishlist from "./components/Wishlist/Wishlist";
 function App() {
-    const [dispatch] = useStateValue();
+    const [{ user }, dispatch] = useStateValue();
     useEffect(() => {
         auth.onAuthStateChanged((authUser) => {
             console.log(authUser);
